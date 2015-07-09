@@ -7,5 +7,6 @@
   <modules>
   	<module>game-common</module>
   	<module>game-old</module>
+  	<module>game-process</module>
   </modules>
 </project>
