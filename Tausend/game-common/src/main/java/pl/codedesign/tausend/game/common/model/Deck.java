@@ -3,12 +3,18 @@ package pl.codedesign.tausend.game.common.model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Klasa reprezentuj¹ca model talii kart na stole, przed rozdaniem
+ * 
+ * @author Boles³aw Denk
+ * @version 1.0
+ */
 public class Deck {
 
 	/** Ca³a talia 24 kart */
 	private List<Card> cards;
 	
-	/** Musik */
+	/** Musik - 4 lub 3 karty */
 	private List<Card> booster;
 	
 	public Deck(List<Card> cards){
