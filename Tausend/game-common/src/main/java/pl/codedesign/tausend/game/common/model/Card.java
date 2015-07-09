@@ -15,7 +15,7 @@ public class Card implements Serializable {
 	
 	private Integer value;
 
-	private Integer announcement;
+	private Integer announcement; //deprecated? -> Figure.getValue
 	
 	public Figure getFigure() {
 		return figure;
