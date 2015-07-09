@@ -8,15 +8,25 @@ package pl.codedesign.tausend.game.common.model;
 public enum Figure {
 
 	/** Serce */
-	HEARTS,
+	HEARTS(100),
 	
 	/** Karo */
-	TILES,
+	DIAMONDS(80),
 	
 	/** Trefl */
-	CLUBS, 
+	CLUBS(60), 
 	
 	/** Pik */
-	SPADES
+	SPADES(40);
 	
+	/** Wartoœæ koloru do meldunku. */
+	private final Integer value;
+	
+	private Figure(Integer value){
+		this.value = value;
+	}
+
+	public Integer getValue() {
+		return value;
+	}	
 }

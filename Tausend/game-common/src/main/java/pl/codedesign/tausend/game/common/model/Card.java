@@ -1,11 +1,15 @@
 package pl.codedesign.tausend.game.common.model;
 
+import java.io.Serializable;
+
 /**
  * Encja przechowuje informacje o kolorze karty i jej wadze punktowej (i jest zajebistsza)
  * @author Boles³aw Denk
  * @version 1.0
  */
-public class Card {
+public class Card implements Serializable {
+
+	private static final long serialVersionUID = 213431096958702826L;
 
 	private Figure figure;
 	
