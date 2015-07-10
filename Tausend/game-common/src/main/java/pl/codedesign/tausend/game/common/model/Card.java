@@ -14,8 +14,6 @@ public class Card implements Serializable {
 	private Figure figure;
 	
 	private Integer value;
-
-	private Integer announcement; //deprecated? -> Figure.getValue
 	
 	public Figure getFigure() {
 		return figure;
@@ -33,16 +31,6 @@ public class Card implements Serializable {
 		this.value = value;
 	}
 	
-	
-
-	public Integer getAnnouncement() {
-		return announcement;
-	}
-
-	public void setAnnouncement(Integer announcement) {
-		this.announcement = announcement;
-	}
-
 	@Override
 	public String toString() {
 		return "Card [" + figure + " " + value + "]";

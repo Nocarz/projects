@@ -12,9 +12,7 @@ public class CardBuilder {
 	private Figure figure;
 	
 	private Integer value;
-	
-	private Integer announcement;
-	
+		
 	protected CardBuilder(){ }
 	
 	public static CardBuilder builder(){
@@ -31,16 +29,10 @@ public class CardBuilder {
 		return this;
 	}
 	
-	public CardBuilder announcement(Integer announcement) {
-		this.announcement = announcement;
-		return this;
-	}
-	
 	public Card build(){
 		Card c = new Card();
 		c.setFigure(figure);
 		c.setValue(value);
-		c.setAnnouncement(announcement);
 		
 		return c;
 	}
