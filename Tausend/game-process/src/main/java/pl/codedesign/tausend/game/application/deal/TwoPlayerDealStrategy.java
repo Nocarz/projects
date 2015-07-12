@@ -9,7 +9,7 @@ import pl.codedesign.tausend.game.common.model.Player;
  * 
  * @author Boles³aw Denk
  */
-public class TwoPlayerDealStrategy implements DealStrategy {
+public class TwoPlayerDealStrategy extends AbstractDealStrategy {
 
 	public void deal(List<Player> players) {
 		// TODO Auto-generated method stub
