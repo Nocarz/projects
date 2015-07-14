@@ -40,6 +40,14 @@ public class Deck {
 		
 		cards.add(card);
 	}
+	
+	public Card getCard(int index){
+		if(cards == null){
+			return null;
+		}
+		
+		return cards.get(index);
+	}
 
 	public List<Card> getBooster() {
 		return booster;
