@@ -21,6 +21,9 @@ public class Player {
 	}
 
 	public List<Card> getHand() {
+		if(hand == null){
+			hand = new ArrayList<Card>();
+		}
 		return hand;
 	}
 
