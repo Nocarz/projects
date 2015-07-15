@@ -26,10 +26,11 @@ public class TwoPlayerDealStrategyTest {
 	private Player p2;
 	
 	private List<Player> players;
+	private List<Card> cards;
 	
 	@Before
 	public void setUp(){
-		List<Card> cards = Lists.newArrayList();
+		cards = Lists.newArrayList();
 		
 		for(int i=0; i < 24; i++){
 			cards.add(CardBuilder.builder().value(i).build());
@@ -48,7 +49,7 @@ public class TwoPlayerDealStrategyTest {
 	}
 	
 	@Test
-	public void deal() {		
+	public void deal_ok() {		
 		//when
 		strategy.deal(players);
 		
@@ -57,5 +58,36 @@ public class TwoPlayerDealStrategyTest {
 		assertThat(p2.getHand()).isNotNull().isNotEmpty().hasSize(10);
 		assertThat(deck.getBooster()).isNotNull().isNotEmpty().hasSize(4);
 	}
+	
+	@Test(expected = NullPointerException.class)
+	public void deal_playersNPE() {
+		//when
+		strategy.deal(null);
+		
+		//then exception is thrown
+	}
+	
+	@Test(expected = NullPointerException.class)
+	public void deal_deckNPE() {
+		//given
+		strategy = spy(new TwoPlayerDealStrategy(null));
 
+		//when
+		strategy.deal(players);
+		
+		//then exception is thrown
+	}
+	
+	@Test(expected = IndexOutOfBoundsException.class)
+	public void deal_deckMissing() {
+		//given
+		deck = Deck.of(cards.subList(0, 22));
+		strategy = spy(new TwoPlayerDealStrategy(deck));
+
+		//when
+		strategy.deal(players);
+		
+		//then exception is thrown
+	}
+	
 }

@@ -6,6 +6,11 @@ import java.util.Random;
 import pl.codedesign.tausend.game.common.model.Deck;
 import pl.codedesign.tausend.game.common.model.Player;
 
+/**
+ * Mo¿e trochê na wyrost, ale oba alborytmy maj¹ pewne czêœci wspólne, które tu zamieszczam.
+ * 
+ * @author Boles³aw Denk
+ */
 public abstract class AbstractDealStrategy implements DealStrategy {
 
 	protected final Random random = new Random();
