@@ -28,10 +28,6 @@ public class Deck {
 	public List<Card> getCards() {
 		return cards;
 	}
-
-	public void setCards(List<Card> cards) {
-		this.cards = cards;
-	}
 	
 	public void addCard(Card card){
 		if(cards == null){
@@ -51,10 +47,6 @@ public class Deck {
 
 	public List<Card> getBooster() {
 		return booster;
-	}
-
-	public void setBooster(List<Card> booster) {
-		this.booster = booster;
 	}
 	
 	public void addBoosterCard(Card card){
