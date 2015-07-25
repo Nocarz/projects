@@ -1,12 +1,35 @@
 package pl.codedesign.tausend.game.application.process;
 
-public abstract class Game {
+import java.util.List;
 
-	public static int POINTS_ACE = 11;
-	public static int POINTS_10 = 10;
-	public static int POINTS_K = 4;
-	public static int POINTS_Q = 3;
-	public static int POINTS_J = 2;
-	public static int POINTS_9 = 0;	
+import pl.codedesign.tausend.game.application.deal.DealStrategyFactory;
+import pl.codedesign.tausend.game.application.init.DeckCreator;
+import pl.codedesign.tausend.game.common.model.Deck;
+import pl.codedesign.tausend.game.common.model.Player;
+
+/**
+ * Klasa uruchamiaj¹ca poszczególne fazy gry
+ * 
+ * @author Boles³aw Denk
+ * @version 1.0
+ */
+public class Game {
+
+	private final List<Player> players;
+	
+	public Game of(List<Player> players) {
+		return new Game(players);		
+	}
+	
+	protected Game(List<Player> players) {
+		this.players = players;
+	}
+	
+	public void play(){
+		Deck deck = DeckCreator.build();
+		
+		//Rozdanie kart
+		DealStrategyFactory.create(players.size(), deck).deal(players);
+	}
 	
 }
