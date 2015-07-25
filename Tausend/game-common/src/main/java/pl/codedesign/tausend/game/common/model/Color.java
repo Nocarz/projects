@@ -1,7 +1,7 @@
 package pl.codedesign.tausend.game.common.model;
 
 /**
- * Typ wyliczaj¹cy mo¿liwe kolory kart wraz z ich wartoœci¹ meldunkow¹.
+ * Typ wyliczaj¹cy mo¿liwe kolory kart wraz z ich wartoœci¹ atutu.
  * 
  * @author Boles³aw Denk
  * @version 1.1
@@ -20,7 +20,7 @@ public enum Color {
 	/** Pik */
 	SPADES(40);
 	
-	/** Wartoœæ koloru do meldunku. */
+	/** Wartoœæ atutu koloru do meldunku. */
 	private final Integer value;
 	
 	private Color(Integer value){
