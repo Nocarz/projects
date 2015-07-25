@@ -15,6 +15,7 @@ import static pl.codedesign.tausend.game.common.model.Figure.QUEEN;
 import java.util.List;
 
 import pl.codedesign.tausend.game.common.model.Card;
+import pl.codedesign.tausend.game.common.model.Deck;
 
 import com.google.common.collect.Lists;
 
@@ -25,39 +26,39 @@ import com.google.common.collect.Lists;
  */
 public class DeckCreator {
 
-	public static List<Card> build(){
-		List<Card> deck = Lists.newArrayList();
+	public static Deck build(){				
+		List<Card> cards = Lists.newArrayList();
 		
-		deck.add(builder().card(C9).of(HEARTS).build());
-		deck.add(builder().card(C9).of(DIAMONDS).build());
-		deck.add(builder().card(C9).of(CLUBS).build());
-		deck.add(builder().card(C9).of(SPADES).build());
+		cards.add(builder().card(C9).of(HEARTS).build());
+		cards.add(builder().card(C9).of(DIAMONDS).build());
+		cards.add(builder().card(C9).of(CLUBS).build());
+		cards.add(builder().card(C9).of(SPADES).build());
 		
-		deck.add(builder().card(JACK).of(HEARTS).build());
-		deck.add(builder().card(JACK).of(DIAMONDS).build());
-		deck.add(builder().card(JACK).of(CLUBS).build());
-		deck.add(builder().card(JACK).of(SPADES).build());
+		cards.add(builder().card(JACK).of(HEARTS).build());
+		cards.add(builder().card(JACK).of(DIAMONDS).build());
+		cards.add(builder().card(JACK).of(CLUBS).build());
+		cards.add(builder().card(JACK).of(SPADES).build());
 		
-		deck.add(builder().card(QUEEN).of(HEARTS).build());
-		deck.add(builder().card(QUEEN).of(DIAMONDS).build());
-		deck.add(builder().card(QUEEN).of(CLUBS).build());
-		deck.add(builder().card(QUEEN).of(SPADES).build());
+		cards.add(builder().card(QUEEN).of(HEARTS).build());
+		cards.add(builder().card(QUEEN).of(DIAMONDS).build());
+		cards.add(builder().card(QUEEN).of(CLUBS).build());
+		cards.add(builder().card(QUEEN).of(SPADES).build());
 		
-		deck.add(builder().card(KING).of(HEARTS).build());
-		deck.add(builder().card(KING).of(DIAMONDS).build());
-		deck.add(builder().card(KING).of(CLUBS).build());
-		deck.add(builder().card(KING).of(SPADES).build());
+		cards.add(builder().card(KING).of(HEARTS).build());
+		cards.add(builder().card(KING).of(DIAMONDS).build());
+		cards.add(builder().card(KING).of(CLUBS).build());
+		cards.add(builder().card(KING).of(SPADES).build());
 		
-		deck.add(builder().card(C10).of(HEARTS).build());
-		deck.add(builder().card(C10).of(DIAMONDS).build());
-		deck.add(builder().card(C10).of(CLUBS).build());
-		deck.add(builder().card(C10).of(SPADES).build());
+		cards.add(builder().card(C10).of(HEARTS).build());
+		cards.add(builder().card(C10).of(DIAMONDS).build());
+		cards.add(builder().card(C10).of(CLUBS).build());
+		cards.add(builder().card(C10).of(SPADES).build());
 		
-		deck.add(builder().card(ACE).of(HEARTS).build());
-		deck.add(builder().card(ACE).of(DIAMONDS).build());
-		deck.add(builder().card(ACE).of(CLUBS).build());
-		deck.add(builder().card(ACE).of(SPADES).build());
+		cards.add(builder().card(ACE).of(HEARTS).build());
+		cards.add(builder().card(ACE).of(DIAMONDS).build());
+		cards.add(builder().card(ACE).of(CLUBS).build());
+		cards.add(builder().card(ACE).of(SPADES).build());
 		
-		return deck;
+		return Deck.of(cards);
 	}	
 }
