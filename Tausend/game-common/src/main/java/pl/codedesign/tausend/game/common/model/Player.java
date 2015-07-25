@@ -6,10 +6,13 @@ import java.util.List;
 
 public class Player {
 
+	/** Nazwa gracza */
 	private String name;
 	
+	/** Karty którymi dysponuje gracz */
 	private List<Card> hand;
 	
+	/** Meldunek - ile gracz zadeklarowa³ minimalnie, ¿e ugra. */
 	private Integer annoucement;
 
 	public String getName() {

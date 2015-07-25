@@ -1,11 +1,11 @@
 package pl.codedesign.tausend.game.common.model;
 
 /**
- * Typ wyliczaj¹cy mo¿liwe figury kart.
+ * Typ wyliczaj¹cy mo¿liwe kolory kart.
  * @author Boles³aw Denk
  * @version 1.0
  */
-public enum Figure {
+public enum Color {
 
 	/** Serce */
 	HEARTS(100),
@@ -22,7 +22,7 @@ public enum Figure {
 	/** Wartoœæ koloru do meldunku. */
 	private final Integer value;
 	
-	private Figure(Integer value){
+	private Color(Integer value){
 		this.value = value;
 	}
 

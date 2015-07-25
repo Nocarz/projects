@@ -9,7 +9,7 @@ package pl.codedesign.tausend.game.common.model;
  */
 public class CardBuilder {
 
-	private Figure figure;
+	private Color figure;
 	
 	private Integer value;
 		
@@ -19,7 +19,7 @@ public class CardBuilder {
 		return new CardBuilder();
 	}
 	
-	public CardBuilder figure(Figure figure) {
+	public CardBuilder figure(Color figure) {
 		this.figure = figure;
 		return this;
 	}
@@ -31,7 +31,7 @@ public class CardBuilder {
 	
 	public Card build(){
 		Card c = new Card();
-		c.setFigure(figure);
+		c.setColor(figure);
 		c.setValue(value);
 		
 		return c;
