@@ -11,8 +11,11 @@ public class Card implements Serializable {
 
 	private static final long serialVersionUID = 213431096958702826L;
 
-	/** Enum reprezentuj¹cy kolor karty, np serce */
+	/** Enum reprezentuj¹cy kolor karty, np. serce */
 	private Color color;
+	
+	/** Enum reprezentuj¹cy figurê karty, np. król */
+	private Figure figure;
 	
 	/** Waga punktowa karty */
 	private Integer value;
@@ -23,6 +26,14 @@ public class Card implements Serializable {
 
 	public void setColor(Color color) {
 		this.color = color;
+	}
+	
+	public Figure getFigure() {
+		return figure;
+	}
+
+	public void setFigure(Figure figure) {
+		this.figure = figure;
 	}
 
 	public Integer getValue() {
@@ -35,6 +46,6 @@ public class Card implements Serializable {
 	
 	@Override
 	public String toString() {
-		return "Card [" + color + " " + value + "]";
+		return "Card [" + figure.name() + " " + value + "]";
 	}
 }

@@ -1,9 +1,10 @@
 package pl.codedesign.tausend.game.common.model;
 
 /**
- * Typ wyliczaj¹cy mo¿liwe kolory kart.
+ * Typ wyliczaj¹cy mo¿liwe kolory kart wraz z ich wartoœci¹ meldunkow¹.
+ * 
  * @author Boles³aw Denk
- * @version 1.0
+ * @version 1.1
  */
 public enum Color {
 
