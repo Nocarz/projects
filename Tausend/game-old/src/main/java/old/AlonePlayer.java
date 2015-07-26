@@ -82,13 +82,13 @@ public class AlonePlayer
 		{
 			
 			int rand = getRand(0,23);		
-			while(karty[rand] == "nic")
-			{ 
+			while(karty[rand] == "nic") 
+			{ //jeœli wylosowany indeks trafi³ na "nic" to bierz kolejny
 				if(rand==23) rand=0;
 				else rand++;
 			}
 			gracz1[i] = new Karciochy(karty[rand],punkty[rand],0,Img.obrazkiKart[rand]);
-			karty[rand] = "nic";
+			karty[rand] = "nic"; //a tutaj zamiast znullowaæ to jest wpisyane "nic"
 
 			rand = getRand(0,23);			
 			while(karty[rand] == "nic")

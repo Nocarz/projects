@@ -11,10 +11,10 @@ import java.io.*;
 
 public class Karciochy implements Serializer
 { 	
-	String a;
-	int b;
-	int c;
-	Obrazek ii;
+	String kolorFigura;
+	int punkty;
+	int meldunek;
+	Obrazek img;
 	
 	/** Podstawowy konstruktor domyœlny, pobierajacy parê String, integer
 	 * @param x zmienna koloru karty
@@ -23,9 +23,9 @@ public class Karciochy implements Serializer
 	 */
 	public Karciochy(String x, int y, Obrazek jj)
 	{
-		a = x;
-		b = y;
-		ii = jj;
+		kolorFigura = x;
+		punkty = y;
+		img = jj;
 	}
 	
 	/** Konstruktor, pobierajacy trójkê zmiennych String, int, int. Trzecia zmienna odpowiada za meldunek
@@ -36,20 +36,20 @@ public class Karciochy implements Serializer
 	 */
 	public Karciochy(String x, int y, int z, Obrazek jj)
 	{
-		a = x;
-		b = y;
-		c = z;
-		ii = jj;
+		kolorFigura = x;
+		punkty = y;
+		meldunek = z;
+		img = jj;
 	}
 	
 	/** Konstruktor tworzacy obiekt ze zmiennych wewnêtrznych innego obiektu klasy karciochy
 	 *  @param k obiekt klasy Karciochy */
 	public Karciochy(Karciochy k)
 	{
-		a = k.a;
-		b = k.b;
-		c = k.c;
-		ii = k.ii;
+		kolorFigura = k.kolorFigura;
+		punkty = k.punkty;
+		meldunek = k.meldunek;
+		img = k.img;
 	}
 
 	
@@ -57,24 +57,24 @@ public class Karciochy implements Serializer
 	 *  @param k obiekt klasy Karciochy */
 	public void setKart(Karciochy k)
 	{
-		a = k.a;
-		b = k.b;
-		c = k.c;
-		ii = k.ii;
+		kolorFigura = k.kolorFigura;
+		punkty = k.punkty;
+		meldunek = k.meldunek;
+		img = k.img;
 	}
 	
 	/** Metoda ustawia pobran¹ wartoœæ typu int jako meldunek karty
 	 *  @param z zmienna meldunku */
 	public void setMeld(int z)
 	{
-		c = z;
+		meldunek = z;
 	}
 	
 	/** Metoda zwracaj¹ca kolor karty */
 	/** @return a zwracany kolorkarty */
 	public String getKolor()
 	{		
-		return a;
+		return kolorFigura;
 	}
 	
 	/** Metoda zwracaj¹ca litere koloru karty na zadanej pozycji ze Stringu
@@ -82,39 +82,39 @@ public class Karciochy implements Serializer
 	 * @return a zwracany 1 literê koloru karty */
 	public char getKolor(int f)
 	{		
-		return a.charAt(f);
+		return kolorFigura.charAt(f);
 	}
 	
 	/** Metoda zwracaj¹ca wage punktow¹ karty */
 	/** @return b zwracana waga punktowa karty */
 	public int getPt()
 	{		
-		return b;
+		return punkty;
 	}
 	
 	/** Metoda zwracaj¹ca atut karty (istotne do meldunku) */
 	/** @return c zwracany atut karty (jesli zajdzie taka potrzbea) */
 	public int getAtut()
 	{		
-		return c;
+		return meldunek;
 	}
 
 
 	public Obrazek getObrazek()
 	{
-		return ii;
+		return img;
 	}
 
 	/** Metoda zwracaj¹ca obrazek karty */
 	/** @return c zwracany obrazek karty */
 	public Image getImg()
 	{
-		return ii.getImageFormObrazek();
+		return img.getImageFormObrazek();
 	}
 
 	public int getIndexImg()
 	{
-		return ii.getIndexFormObrazek();
+		return img.getIndexFormObrazek();
 	}
 	
 	/** Metoda zeruj¹ca zadan¹ iloœæ zmiennych obiektu 
@@ -123,14 +123,14 @@ public class Karciochy implements Serializer
 	{
 		if(ile==2)
 		{
-			a = "0";
-			b = 0;
+			kolorFigura = "0";
+			punkty = 0;
 		}
 		else if(ile==3)
 		{
-			a = "0";
-			b = 0;
-			c = 0;	
+			kolorFigura = "0";
+			punkty = 0;
+			meldunek = 0;	
 		}			
 	}
 		
@@ -138,7 +138,7 @@ public class Karciochy implements Serializer
 	 * inaczej: zwraca do konsoli ca³¹ kartê (u¿ywana do testów) */
 	public void show()
 	{
-		System.out.print("[" + a + "," + b + "]");
+		System.out.print("[" + kolorFigura + "," + punkty + "]");
 	}
 
 	/** Metoda serialuzyj¹ca dane odziedziczona przez interface serializuj¹cy */
@@ -163,10 +163,10 @@ public class Karciochy implements Serializer
         DataInputStream din = new DataInputStream( bin );
  
         
-        a = din.readUTF();
-        b = din.readInt();
-        c = din.readInt();
-        ii = Img.obrazkiKart[din.readInt()];
+        kolorFigura = din.readUTF();
+        punkty = din.readInt();
+        meldunek = din.readInt();
+        img = Img.obrazkiKart[din.readInt()];
     }	
     
     
