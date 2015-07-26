@@ -47,10 +47,15 @@ public class Game {
 		}	
 	}
 		
+	Deck getDeck(){
+		return deck;
+	}
+	
 	public static void main(String... args){
 		List<Player> players = Lists.newArrayList(Player.of("Janek"), Player.of("Franek"));
 		
-		Game.of(players).play();
+		Game game = Game.of(players);
+		game.play();
 		
 		for(Player player : players){			
 			System.out.print(player.getName() + (player.isBeginning() ? "! " : " ") + "[");
@@ -59,5 +64,11 @@ public class Game {
 			}
 			System.out.println("]\n");
 		}
+		
+		System.out.print("Booster [");
+		for(Card c : game.getDeck().getBooster()){
+			System.out.print(c.toString() + ", ");
+		}
+		System.out.println("]\n");
 	}	
 }
