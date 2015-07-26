@@ -14,6 +14,9 @@ public class Player {
 	
 	/** Meldunek - ile gracz zadeklarowa³ minimalnie, ¿e ugra. */
 	private Integer annoucement;
+	
+	/** Zaczynaj¹cy licytacjê - posiada 9 serce. */
+	private boolean beginning;
 
 	public static Player of(String name){
 		Player p = new Player();
@@ -46,6 +49,10 @@ public class Player {
 			hand = new ArrayList<Card>();
 		}
 		hand.add(card);
+		
+		if(card.isStarting()){
+			this.setBeginning(true);
+		}
 	}
 	
 	public Integer getAnnoucement() {
@@ -54,6 +61,14 @@ public class Player {
 
 	public void setAnnoucement(Integer annoucement) {
 		this.annoucement = annoucement;
+	}
+
+	public boolean isBeginning() {
+		return beginning;
+	}
+
+	public void setBeginning(boolean beginning) {
+		this.beginning = beginning;
 	}
 	
 	

@@ -20,6 +20,8 @@ import com.google.common.collect.Lists;
  */
 public class Game {
 
+	private Deck deck;
+	
 	private final List<Player> players;
 	
 	public static Game of(List<Player> players) {
@@ -35,24 +37,27 @@ public class Game {
 	}
 	
 	public void play(){
-		Deck deck = DeckCreator.build();
+		deck = DeckCreator.build();
 		
 		//Rozdanie kart
 		DealStrategyFactory.create(players.size(), deck).deal(players);
 				
 		for(Player player : players){
 			Collections.sort(player.getHand(), new CardComparator());
-			
-			System.out.print(player.getName() + "[");
+		}	
+	}
+		
+	public static void main(String... args){
+		List<Player> players = Lists.newArrayList(Player.of("Janek"), Player.of("Franek"));
+		
+		Game.of(players).play();
+		
+		for(Player player : players){			
+			System.out.print(player.getName() + (player.isBeginning() ? "! " : " ") + "[");
 			for(Card c : player.getHand()){
 				System.out.print(c.toString() + ", ");
 			}
 			System.out.println("]\n");
 		}
-	}
-	
-	public static void main(String... args){
-		Game.of(Player.of("Janek"), Player.of("Franek")).play();
-	}
-	
+	}	
 }

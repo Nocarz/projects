@@ -29,7 +29,7 @@ public class DeckCreator {
 	public static Deck build(){				
 		List<Card> cards = Lists.newArrayList();
 		
-		cards.add(builder().card(C9).of(HEARTS).build());
+		cards.add(builder().card(C9).of(HEARTS).starting(true).build());
 		cards.add(builder().card(C9).of(DIAMONDS).build());
 		cards.add(builder().card(C9).of(CLUBS).build());
 		cards.add(builder().card(C9).of(SPADES).build());

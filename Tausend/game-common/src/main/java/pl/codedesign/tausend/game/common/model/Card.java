@@ -18,6 +18,9 @@ public class Card implements Serializable {
 	/** Enum reprezentuj¹cy figurê karty, np. król */
 	private Figure figure;
 	
+	/** Czy ta karta otwiera gre - 9 serce. */
+	private boolean starting = false;
+	
 	/** Waga punktowa karty */
 	private Integer value;
 	
@@ -44,9 +47,17 @@ public class Card implements Serializable {
 	public void setValue(Integer value) {
 		this.value = value;
 	}
-	
+		
+	public boolean isStarting() {
+		return starting;
+	}
+
+	public void setStarting(boolean starting) {
+		this.starting = starting;
+	}
+
 	@Override
 	public String toString() {
-		return "Card [" + figure.name() + " " + color.name() + "]";
+		return "[" + figure.name() + " of " + color.name() + "]";
 	}
 }
