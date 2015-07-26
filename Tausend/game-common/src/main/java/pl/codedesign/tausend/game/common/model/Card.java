@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 /**
  * Encja przechowuje informacje o kolorze karty i jej wadze punktowej (i jest zajebistsza)
+ * 
  * @author Boles³aw Denk
  * @version 1.0
  */
