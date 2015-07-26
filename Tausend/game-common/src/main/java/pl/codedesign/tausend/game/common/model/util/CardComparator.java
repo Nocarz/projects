@@ -20,10 +20,10 @@ public class CardComparator implements Comparator<Card> {
 		} else if (c1 == null && c2 != null) {
 			return -1;
 		} else {
-			if(c1.getColor().getValue().equals(c2.getColor().getValue())){
-				return c2.getFigure().points().compareTo(c1.getFigure().points());
+			if(c2.getColor().getValue().equals(c1.getColor().getValue())){
+				return c1.getFigure().points().compareTo(c2.getFigure().points());
 			} else {
-				return c1.getColor().getValue().compareTo(c2.getColor().getValue());
+				return c2.getColor().getValue().compareTo(c1.getColor().getValue());
 			}
 		}
 	}

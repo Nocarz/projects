@@ -47,6 +47,6 @@ public class Card implements Serializable {
 	
 	@Override
 	public String toString() {
-		return "Card [" + figure.name() + " " + value + "]";
+		return "Card [" + figure.name() + " " + color.name() + "]";
 	}
 }

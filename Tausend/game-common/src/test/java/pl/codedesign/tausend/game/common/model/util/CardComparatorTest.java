@@ -26,7 +26,7 @@ public class CardComparatorTest {
 		
 		int result = comparator.compare(c1, c2);
 		
-		assertThat(result).isEqualTo(1);
+		assertThat(result).isEqualTo(-1);
 	}
 
 	@Test
@@ -36,7 +36,7 @@ public class CardComparatorTest {
 		
 		int result = comparator.compare(c1, c2);
 		
-		assertThat(result).isEqualTo(-1);
+		assertThat(result).isEqualTo(1);
 	}
 	
 	@Test
@@ -56,7 +56,7 @@ public class CardComparatorTest {
 		
 		int result = comparator.compare(c1, c2);
 		
-		assertThat(result).isEqualTo(1);
+		assertThat(result).isEqualTo(-1);
 	}
 	
 }

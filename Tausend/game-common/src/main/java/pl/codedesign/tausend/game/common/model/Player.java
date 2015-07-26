@@ -15,6 +15,13 @@ public class Player {
 	/** Meldunek - ile gracz zadeklarowa³ minimalnie, ¿e ugra. */
 	private Integer annoucement;
 
+	public static Player of(String name){
+		Player p = new Player();
+		p.setName(name);
+		
+		return p;
+	}
+	
 	public String getName() {
 		return name;
 	}
