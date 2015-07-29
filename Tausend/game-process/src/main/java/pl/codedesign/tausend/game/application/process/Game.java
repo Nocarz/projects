@@ -3,9 +3,11 @@ package pl.codedesign.tausend.game.application.process;
 import java.util.Collections;
 import java.util.List;
 
+import pl.codedesign.tausend.game.application.bidding.AssetSupport;
 import pl.codedesign.tausend.game.application.deal.DealStrategyFactory;
 import pl.codedesign.tausend.game.application.init.DeckCreator;
 import pl.codedesign.tausend.game.common.model.Card;
+import pl.codedesign.tausend.game.common.model.Color;
 import pl.codedesign.tausend.game.common.model.Deck;
 import pl.codedesign.tausend.game.common.model.Player;
 import pl.codedesign.tausend.game.common.model.util.CardComparator;
@@ -36,9 +38,7 @@ public class Game {
 		this.players = players;
 	}
 	
-	public void play(){
-		deck = DeckCreator.build();
-		
+	public void deal(Deck deck){		
 		//Rozdanie kart
 		DealStrategyFactory.create(players.size(), deck).deal(players);
 				
@@ -46,29 +46,39 @@ public class Game {
 			Collections.sort(player.getHand(), new CardComparator());
 		}	
 	}
-		
-	Deck getDeck(){
-		return deck;
-	}
 	
 	public static void main(String... args){
+		StringBuilder summary = new StringBuilder("------------\n");
 		List<Player> players = Lists.newArrayList(Player.of("Janek"), Player.of("Franek"));
+		Deck deck = DeckCreator.build();
 		
 		Game game = Game.of(players);
-		game.play();
+		game.deal(deck);
 		
 		for(Player player : players){			
-			System.out.print(player.getName() + (player.isBeginning() ? "! " : " ") + "[");
+			summary.append(player.getName()).append((player.isBeginning() ? "! " : " ")).append("[");
 			for(Card c : player.getHand()){
-				System.out.print(c.toString() + ", ");
+				summary.append(c.toString()).append(", ");
 			}
-			System.out.println("]\n");
+			summary.append("],\n assets: ");
+			
+			List<Color> assets = AssetSupport.check(player);
+			if(assets.size() ==0){
+				summary.append("none");
+			} else {
+				for(Color asset : assets){
+					summary.append(asset.getValue()).append(", ");
+				}				
+			}
+			summary.append("\n\n");
 		}
 		
-		System.out.print("Booster [");
-		for(Card c : game.getDeck().getBooster()){
-			System.out.print(c.toString() + ", ");
+		summary.append("Booster [");
+		for(Card c : deck.getBooster()){
+			summary.append(c.toString()).append(", ");
 		}
-		System.out.println("]\n");
+		summary.append("]\n");
+		
+		System.out.println(summary.toString());
 	}	
 }
