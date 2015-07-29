@@ -17,28 +17,30 @@ import com.google.common.collect.Lists;
  * @version 1.0
  *
  */
-public class AtutSupport {
+public class AssetSupport {
 
-	public void check(Player player){
-		List<Color> atuty = Lists.newArrayList();
+	public static List<Color> check(Player player){
+		List<Color> assets = Lists.newArrayList();
 		
 		for(Color color : Color.values()){
-			Integer atutOfColor = 0;
+			Integer currentAsset = 0;
 			
 			for(Card card : player.getHand()){
 				if(color.equals(card.getColor())){
 					if(Figure.QUEEN.equals(card.getFigure()) || Figure.KING.equals(card.getFigure())){
-						atutOfColor += color.getValue();
+						currentAsset += color.getValue();
 					}
 				}
 			}
 
-			atutOfColor /= 2;
+			currentAsset /= 2;
 			
-			if(atutOfColor.equals(color.getValue())){
-				atuty.add(color);
+			if(currentAsset.equals(color.getValue())){
+				assets.add(color);
 			}			
-		}		
+		}
+		
+		return assets;
 	}
 	
 }
