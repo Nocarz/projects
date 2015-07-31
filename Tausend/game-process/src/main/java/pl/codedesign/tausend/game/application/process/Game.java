@@ -22,8 +22,6 @@ import com.google.common.collect.Lists;
  */
 public class Game {
 
-	private Deck deck;
-	
 	private final List<Player> players;
 	
 	public static Game of(List<Player> players) {
@@ -38,7 +36,7 @@ public class Game {
 		this.players = players;
 	}
 	
-	public void deal(Deck deck){		
+	public void deal(Deck deck){
 		//Rozdanie kart
 		DealStrategyFactory.create(players.size(), deck).deal(players);
 				
@@ -63,7 +61,7 @@ public class Game {
 			summary.append("],\n assets: ");
 			
 			List<Color> assets = AssetSupport.check(player);
-			if(assets.size() ==0){
+			if(assets.isEmpty()){
 				summary.append("none");
 			} else {
 				for(Color asset : assets){
