@@ -6,7 +6,9 @@ public class PlayerBuilder {
 
 	private String name;	
 	private List<Card> hand;
-	private Integer annoucement;
+	private Integer bid;
+	private Integer turn;
+	private Integer score;
 	
 	private PlayerBuilder(){
 		
@@ -26,16 +28,28 @@ public class PlayerBuilder {
 		return this;
 	}
 	
-	public PlayerBuilder annoucement(Integer annoucement){
-		this.annoucement = annoucement;
+	public PlayerBuilder bid(Integer bid){
+		this.bid = bid;
+		return this;
+	}
+	
+	public PlayerBuilder turn(Integer turn){
+		this.turn = turn;
+		return this;
+	}
+	
+	public PlayerBuilder score(Integer score){
+		this.score = score;
 		return this;
 	}
 	
 	public Player build(){
 		Player p = new Player();
-		p.setAnnoucement(annoucement);
+		p.setBid(bid);
 		p.setHand(hand);
 		p.setName(name);
+		p.setScore(score);
+		p.setTurn(turn);
 		
 		return p;
 	}

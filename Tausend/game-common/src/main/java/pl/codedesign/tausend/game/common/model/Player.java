@@ -3,7 +3,12 @@ package pl.codedesign.tausend.game.common.model;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Klasa reprezentuj¹ca model gracza.
+ * 
+ * @author Boles³aw Denk
+ * @version 1.0
+ */
 public class Player {
 
 	/** Nazwa gracza */
@@ -13,10 +18,16 @@ public class Player {
 	private List<Card> hand;
 	
 	/** Meldunek - ile gracz zadeklarowa³ minimalnie, ¿e ugra. */
-	private Integer annoucement;
+	private Integer bid;
 	
 	/** Zaczynaj¹cy licytacjê - posiada 9 serce. */
 	private boolean beginning;
+	
+	/** Ustalona kolejnoœæ w grze. */
+	private Integer turn;
+	
+	/** Zebrana iloœæ punktów. */
+	private Integer score;
 
 	public static Player of(String name){
 		Player p = new Player();
@@ -55,12 +66,12 @@ public class Player {
 		}
 	}
 	
-	public Integer getAnnoucement() {
-		return annoucement;
+	public Integer getBid() {
+		return bid;
 	}
 
-	public void setAnnoucement(Integer annoucement) {
-		this.annoucement = annoucement;
+	public void setBid(Integer bid) {
+		this.bid = bid;
 	}
 
 	public boolean isBeginning() {
@@ -70,7 +81,23 @@ public class Player {
 	public void setBeginning(boolean beginning) {
 		this.beginning = beginning;
 	}
-	
-	
-	
+
+	public Integer getTurn() {
+		return turn;
+	}
+
+	public void setTurn(Integer turn) {
+		this.turn = turn;
+	}
+
+	public Integer getScore() {
+		if(score == null){
+			score = 0;
+		}
+		return score;
+	}
+
+	public void setScore(Integer score) {
+		this.score = score;
+	}
 }
