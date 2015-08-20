@@ -29,35 +29,35 @@ public class DeckCreator {
 	public static Deck build(){				
 		List<Card> cards = Lists.newArrayList();
 		
-		cards.add(builder().card(C9).of(HEARTS).starting(true).build());
-		cards.add(builder().card(C9).of(DIAMONDS).build());
-		cards.add(builder().card(C9).of(CLUBS).build());
-		cards.add(builder().card(C9).of(SPADES).build());
+		cards.add(builder().figure(C9).of(HEARTS).starting(true).build());
+		cards.add(builder().figure(C9).of(DIAMONDS).build());
+		cards.add(builder().figure(C9).of(CLUBS).build());
+		cards.add(builder().figure(C9).of(SPADES).build());
 		
-		cards.add(builder().card(JACK).of(HEARTS).build());
-		cards.add(builder().card(JACK).of(DIAMONDS).build());
-		cards.add(builder().card(JACK).of(CLUBS).build());
-		cards.add(builder().card(JACK).of(SPADES).build());
+		cards.add(builder().figure(JACK).of(HEARTS).build());
+		cards.add(builder().figure(JACK).of(DIAMONDS).build());
+		cards.add(builder().figure(JACK).of(CLUBS).build());
+		cards.add(builder().figure(JACK).of(SPADES).build());
 		
-		cards.add(builder().card(QUEEN).of(HEARTS).build());
-		cards.add(builder().card(QUEEN).of(DIAMONDS).build());
-		cards.add(builder().card(QUEEN).of(CLUBS).build());
-		cards.add(builder().card(QUEEN).of(SPADES).build());
+		cards.add(builder().figure(QUEEN).of(HEARTS).build());
+		cards.add(builder().figure(QUEEN).of(DIAMONDS).build());
+		cards.add(builder().figure(QUEEN).of(CLUBS).build());
+		cards.add(builder().figure(QUEEN).of(SPADES).build());
 		
-		cards.add(builder().card(KING).of(HEARTS).build());
-		cards.add(builder().card(KING).of(DIAMONDS).build());
-		cards.add(builder().card(KING).of(CLUBS).build());
-		cards.add(builder().card(KING).of(SPADES).build());
+		cards.add(builder().figure(KING).of(HEARTS).build());
+		cards.add(builder().figure(KING).of(DIAMONDS).build());
+		cards.add(builder().figure(KING).of(CLUBS).build());
+		cards.add(builder().figure(KING).of(SPADES).build());
 		
-		cards.add(builder().card(C10).of(HEARTS).build());
-		cards.add(builder().card(C10).of(DIAMONDS).build());
-		cards.add(builder().card(C10).of(CLUBS).build());
-		cards.add(builder().card(C10).of(SPADES).build());
+		cards.add(builder().figure(C10).of(HEARTS).build());
+		cards.add(builder().figure(C10).of(DIAMONDS).build());
+		cards.add(builder().figure(C10).of(CLUBS).build());
+		cards.add(builder().figure(C10).of(SPADES).build());
 		
-		cards.add(builder().card(ACE).of(HEARTS).build());
-		cards.add(builder().card(ACE).of(DIAMONDS).build());
-		cards.add(builder().card(ACE).of(CLUBS).build());
-		cards.add(builder().card(ACE).of(SPADES).build());
+		cards.add(builder().figure(ACE).of(HEARTS).build());
+		cards.add(builder().figure(ACE).of(DIAMONDS).build());
+		cards.add(builder().figure(ACE).of(CLUBS).build());
+		cards.add(builder().figure(ACE).of(SPADES).build());
 		
 		return Deck.of(cards);
 	}	

@@ -37,11 +37,11 @@ public class AssetSupportTest {
 
 	@Test
 	public void check_none() {
-		hand.add(builder().card(JACK).of(CLUBS).build());
-		hand.add(builder().card(C10).of(HEARTS).build());
-		hand.add(builder().card(C10).of(DIAMONDS).build());
-		hand.add(builder().card(C10).of(CLUBS).build());
-		hand.add(builder().card(C10).of(SPADES).build());
+		hand.add(builder().figure(JACK).of(CLUBS).build());
+		hand.add(builder().figure(C10).of(HEARTS).build());
+		hand.add(builder().figure(C10).of(DIAMONDS).build());
+		hand.add(builder().figure(C10).of(CLUBS).build());
+		hand.add(builder().figure(C10).of(SPADES).build());
 		player.setHand(hand);
 		
 		List<Color> assets = AssetSupport.check(player);
@@ -51,11 +51,11 @@ public class AssetSupportTest {
 	
 	@Test
 	public void check_hearts() {
-		hand.add(builder().card(QUEEN).of(HEARTS).build());
-		hand.add(builder().card(C10).of(DIAMONDS).build());
-		hand.add(builder().card(C10).of(CLUBS).build());
-		hand.add(builder().card(KING).of(HEARTS).build());
-		hand.add(builder().card(C10).of(SPADES).build());
+		hand.add(builder().figure(QUEEN).of(HEARTS).build());
+		hand.add(builder().figure(C10).of(DIAMONDS).build());
+		hand.add(builder().figure(C10).of(CLUBS).build());
+		hand.add(builder().figure(KING).of(HEARTS).build());
+		hand.add(builder().figure(C10).of(SPADES).build());
 		player.setHand(hand);
 		
 		List<Color> assets = AssetSupport.check(player);
@@ -66,12 +66,12 @@ public class AssetSupportTest {
 	
 	@Test
 	public void check_hearts_diamonds() {
-		hand.add(builder().card(QUEEN).of(HEARTS).build());
-		hand.add(builder().card(KING).of(DIAMONDS).build());
-		hand.add(builder().card(C10).of(CLUBS).build());
-		hand.add(builder().card(KING).of(HEARTS).build());
-		hand.add(builder().card(C10).of(SPADES).build());
-		hand.add(builder().card(QUEEN).of(DIAMONDS).build());
+		hand.add(builder().figure(QUEEN).of(HEARTS).build());
+		hand.add(builder().figure(KING).of(DIAMONDS).build());
+		hand.add(builder().figure(C10).of(CLUBS).build());
+		hand.add(builder().figure(KING).of(HEARTS).build());
+		hand.add(builder().figure(C10).of(SPADES).build());
+		hand.add(builder().figure(QUEEN).of(DIAMONDS).build());
 		player.setHand(hand);
 		
 		List<Color> assets = AssetSupport.check(player);

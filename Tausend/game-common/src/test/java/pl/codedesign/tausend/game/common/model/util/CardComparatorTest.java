@@ -21,8 +21,8 @@ public class CardComparatorTest {
 	
 	@Test
 	public void compareColor_KHKD() {
-		Card c1 = builder().card(Figure.KING).of(Color.HEARTS).build();
-		Card c2 = builder().card(Figure.KING).of(Color.DIAMONDS).build();
+		Card c1 = builder().figure(Figure.KING).of(Color.HEARTS).build();
+		Card c2 = builder().figure(Figure.KING).of(Color.DIAMONDS).build();
 		
 		int result = comparator.compare(c1, c2);
 		
@@ -31,8 +31,8 @@ public class CardComparatorTest {
 
 	@Test
 	public void compareColor_KDKH() {
-		Card c1 = builder().card(Figure.KING).of(Color.DIAMONDS).build();
-		Card c2 = builder().card(Figure.KING).of(Color.HEARTS).build();
+		Card c1 = builder().figure(Figure.KING).of(Color.DIAMONDS).build();
+		Card c2 = builder().figure(Figure.KING).of(Color.HEARTS).build();
 		
 		int result = comparator.compare(c1, c2);
 		
@@ -41,8 +41,8 @@ public class CardComparatorTest {
 	
 	@Test
 	public void compareColor_KHKH() {
-		Card c1 = builder().card(Figure.KING).of(Color.HEARTS).build();
-		Card c2 = builder().card(Figure.KING).of(Color.HEARTS).build();
+		Card c1 = builder().figure(Figure.KING).of(Color.HEARTS).build();
+		Card c2 = builder().figure(Figure.KING).of(Color.HEARTS).build();
 		
 		int result = comparator.compare(c1, c2);
 		
@@ -51,8 +51,8 @@ public class CardComparatorTest {
 	
 	@Test
 	public void compareColor_QHKH() {
-		Card c1 = builder().card(Figure.QUEEN).of(Color.HEARTS).build();
-		Card c2 = builder().card(Figure.KING).of(Color.HEARTS).build();
+		Card c1 = builder().figure(Figure.QUEEN).of(Color.HEARTS).build();
+		Card c2 = builder().figure(Figure.KING).of(Color.HEARTS).build();
 		
 		int result = comparator.compare(c1, c2);
 		

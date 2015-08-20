@@ -13,8 +13,6 @@ public class CardBuilder {
 	
 	private Figure figure;
 	
-	private Integer value;
-		
 	private boolean starting = false;
 	
 	protected CardBuilder(){ }
@@ -28,16 +26,11 @@ public class CardBuilder {
 		return this;
 	}
 	
-	public CardBuilder card(Figure figure) {
+	public CardBuilder figure(Figure figure) {
 		this.figure = figure;
 		return this;
 	}
 
-	public CardBuilder value(Integer value) {
-		this.value = value;
-		return this;
-	}
-	
 	public CardBuilder starting(boolean starting) {
 		this.starting = starting;
 		return this;
@@ -47,7 +40,6 @@ public class CardBuilder {
 		Card c = new Card();
 		c.setColor(color);
 		c.setFigure(figure);
-		c.setValue(value);
 		c.setStarting(starting);
 		
 		return c;
