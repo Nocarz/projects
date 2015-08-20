@@ -10,7 +10,7 @@ import pl.codedesign.tausend.game.common.model.Card;
  * @author Boles³aw Denk
  * @version 1.0
  */
-public class CardComparator implements Comparator<Card> {
+public class CardHandComparator implements Comparator<Card> {
 
 	public int compare(Card c1, Card c2) {
 		if(c1 == null && c2 == null){

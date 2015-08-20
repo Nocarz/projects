@@ -12,11 +12,11 @@ import pl.codedesign.tausend.game.common.model.Figure;
 
 public class CardComparatorTest {
 	
-	private CardComparator comparator;
+	private CardHandComparator comparator;
 	
 	@Before
 	public void setup(){
-		comparator = new CardComparator();
+		comparator = new CardHandComparator();
 	}
 	
 	@Test

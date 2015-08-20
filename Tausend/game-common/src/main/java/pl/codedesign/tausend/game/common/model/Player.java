@@ -27,7 +27,7 @@ public class Player {
 	private Integer turn;
 	
 	/** Zebrana iloœæ punktów. */
-	private Integer score;
+	private Integer score = 0;
 
 	public static Player of(String name){
 		Player p = new Player();
@@ -91,10 +91,11 @@ public class Player {
 	}
 
 	public Integer getScore() {
-		if(score == null){
-			score = 0;
-		}
 		return score;
+	}
+	
+	public void appendScore(Integer points){
+		score += points;
 	}
 
 	public void setScore(Integer score) {

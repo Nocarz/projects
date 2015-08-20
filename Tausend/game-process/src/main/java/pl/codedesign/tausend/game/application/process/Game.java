@@ -10,7 +10,7 @@ import pl.codedesign.tausend.game.common.model.Card;
 import pl.codedesign.tausend.game.common.model.Color;
 import pl.codedesign.tausend.game.common.model.Deck;
 import pl.codedesign.tausend.game.common.model.Player;
-import pl.codedesign.tausend.game.common.model.util.CardComparator;
+import pl.codedesign.tausend.game.common.model.util.CardHandComparator;
 
 import com.google.common.collect.Lists;
 
@@ -41,7 +41,7 @@ public class Game {
 		DealStrategyFactory.create(players.size(), deck).deal(players);
 				
 		for(Player player : players){
-			Collections.sort(player.getHand(), new CardComparator());
+			Collections.sort(player.getHand(), new CardHandComparator());
 		}	
 	}
 	
