@@ -3,8 +3,8 @@ package pl.codedesign.tausend.game.common.model.util;
 import static org.fest.assertions.api.Assertions.assertThat;
 import static pl.codedesign.tausend.game.common.model.CardBuilder.builder;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import pl.codedesign.tausend.game.common.model.Card;
 import pl.codedesign.tausend.game.common.model.Color;
@@ -14,7 +14,7 @@ public class CardComparatorTest {
 	
 	private CardHandComparator comparator;
 	
-	@Before
+	@BeforeEach
 	public void setup(){
 		comparator = new CardHandComparator();
 	}

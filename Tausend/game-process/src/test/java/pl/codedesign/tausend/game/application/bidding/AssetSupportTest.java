@@ -13,8 +13,8 @@ import static pl.codedesign.tausend.game.common.model.Figure.QUEEN;
 
 import java.util.List;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import pl.codedesign.tausend.game.common.model.Card;
 import pl.codedesign.tausend.game.common.model.Color;
@@ -22,21 +22,21 @@ import pl.codedesign.tausend.game.common.model.Player;
 
 import com.google.common.collect.Lists;
 
-public class AssetSupportTest {
+class AssetSupportTest {
 		
 	private Player player;
 	
 	private List<Card> hand;
 	
-	@Before
-	public void setup(){		
+	@BeforeEach
+	void setup(){		
 		player = Player.of("Janek");
 		
 		hand = Lists.newArrayList();
 	}
 
 	@Test
-	public void check_none() {
+	void check_none() {
 		hand.add(builder().figure(JACK).of(CLUBS).build());
 		hand.add(builder().figure(C10).of(HEARTS).build());
 		hand.add(builder().figure(C10).of(DIAMONDS).build());
@@ -50,7 +50,7 @@ public class AssetSupportTest {
 	}
 	
 	@Test
-	public void check_hearts() {
+	void check_hearts() {
 		hand.add(builder().figure(QUEEN).of(HEARTS).build());
 		hand.add(builder().figure(C10).of(DIAMONDS).build());
 		hand.add(builder().figure(C10).of(CLUBS).build());
@@ -65,7 +65,7 @@ public class AssetSupportTest {
 	}
 	
 	@Test
-	public void check_hearts_diamonds() {
+	void check_hearts_diamonds() {
 		hand.add(builder().figure(QUEEN).of(HEARTS).build());
 		hand.add(builder().figure(KING).of(DIAMONDS).build());
 		hand.add(builder().figure(C10).of(CLUBS).build());

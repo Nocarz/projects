@@ -1,13 +1,13 @@
 package pl.codedesign.tausend.game.application.deal;
 
 import static org.fest.assertions.api.Assertions.assertThat;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
 
 import java.util.List;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import com.google.common.collect.Lists;
 
@@ -17,7 +17,7 @@ import pl.codedesign.tausend.game.common.model.Deck;
 import pl.codedesign.tausend.game.common.model.Player;
 import pl.codedesign.tausend.game.common.model.PlayerBuilder;
 
-public class TwoPlayerDealStrategyTest {
+class TwoPlayerDealStrategyTest {
 
 	private Deck deck;
 	private TwoPlayerDealStrategy strategy;
@@ -28,12 +28,12 @@ public class TwoPlayerDealStrategyTest {
 	private List<Player> players;
 	private List<Card> cards;
 	
-	@Before
-	public void setUp(){
+	@BeforeEach
+	void setUp(){
 		cards = Lists.newArrayList();
 		
 		for(int i=0; i < 24; i++){
-			cards.add(CardBuilder.builder().value(i).build());
+			cards.add(CardBuilder.builder().build());
 		}
 		
 		deck = Deck.of(cards);
@@ -49,7 +49,7 @@ public class TwoPlayerDealStrategyTest {
 	}
 	
 	@Test
-	public void deal_ok() {		
+	void deal_ok() {		
 		//when
 		strategy.deal(players);
 		
@@ -59,33 +59,36 @@ public class TwoPlayerDealStrategyTest {
 		assertThat(deck.getBooster()).isNotNull().isNotEmpty().hasSize(4);
 	}
 	
-	@Test(expected = NullPointerException.class)
-	public void deal_playersNPE() {
-		//when
-		strategy.deal(null);
-		
-		//then exception is thrown
+	@Test
+	void deal_playersNPE() {				
+	    Assertions.assertThrows(NullPointerException.class, () -> {
+	    	strategy.deal(null);
+	    });		
 	}
 	
-	@Test(expected = NullPointerException.class)
-	public void deal_deckNPE() {
+	@Test
+	void deal_deckNPE() {
 		//given
 		strategy = spy(new TwoPlayerDealStrategy(null));
 
 		//when
-		strategy.deal(players);
+		Assertions.assertThrows(NullPointerException.class, () -> {
+			strategy.deal(players);
+		});
 		
 		//then exception is thrown
 	}
 	
-	@Test(expected = IndexOutOfBoundsException.class)
-	public void deal_deckMissing() {
+	@Test
+	void deal_deckMissing() {
 		//given
 		deck = Deck.of(cards.subList(0, 22));
 		strategy = spy(new TwoPlayerDealStrategy(deck));
 
 		//when
-		strategy.deal(players);
+		Assertions.assertThrows(NullPointerException.class, () -> {
+			strategy.deal(players);
+		});
 		
 		//then exception is thrown
 	}
